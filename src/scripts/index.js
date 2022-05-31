@@ -40,26 +40,11 @@ async function getUserData(userName) {
     const repositoriesResponse = await getRepositories(userName)    
     const repositoriesActivities = await getRepositoriesActivities(userName) 
     
-    const activitiesList = document.querySelector(".activities-list")
-    activitiesList.innerHTML = `<h2>Atividades</h2>`
-
-    for (let i = 0; i < repositoriesActivities.length; i++) {
-        const repositoriesInfo = repositoriesActivities[i];
-        
-        const getActivities = repositoriesInfo.payload.push_id
-        if (getActivities === undefined){
-           continue
-        } 
-        const commits = repositoriesInfo.payload.commits[0].message  
-        const repoName = repositoriesActivities[i].repo.name;
-
-        activitiesList.innerHTML += `<ul>
-                                        <li>${repoName}: <span>${commits}</span></li>
-                                     </ul>`       
-      }  
+    
 
     user.setInfo(userResponse)
-    user.setRepositories(repositoriesResponse)  
+    user.setRepositories(repositoriesResponse) 
+    user.setActivities(repositoriesActivities) 
     screen.renderUser(user)   
 }
   

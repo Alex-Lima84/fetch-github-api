@@ -1,4 +1,4 @@
-import { baseUrl, repositoryQuantity, numberOfResults } from '/src/scripts/variables.js'
+import { baseUrl, repositoryQuantity, activityQuantity } from '/src/scripts/variables.js'
 
 
 async function getRepositories(userName) {
@@ -7,7 +7,7 @@ async function getRepositories(userName) {
 }
 
 async function getRepositoriesActivities(userName) {
-    const response = await fetch(`${baseUrl}/${userName}/events?per_page=${numberOfResults}`)
+    const response = await fetch(`${baseUrl}/${userName}/events?per_page=${activityQuantity}`)
     return await response.json()
 }
 

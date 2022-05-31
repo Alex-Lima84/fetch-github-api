@@ -213,21 +213,23 @@ main {
   display: none;
 }
 
-.container .activities-list {
+.container .events.section {
   width: 100%;
   margin: 20px 40px 100px 40px ;
   padding-left: 40px;
 }
 
-.container .activities-list h2{
+.container .events.section h2{
   margin-bottom: 40px;
 }
 
-.container .activities-list ul{
+.container .events.section ul{
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.container .activities-list ul li{
+.container .events.section ul li{
   font-weight: 700;
   line-height: 30px;
 }
